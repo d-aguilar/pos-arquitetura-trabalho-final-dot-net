@@ -13,6 +13,7 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Rest
     public interface IEnvioDeMensagemService
     {
         [OperationContract]
+        [WebInvoke(Method ="POST", UriTemplate = "/EnvioDeMensagem")]
         void EnviarMensagemParaFila(string mensagem);
     }
 }
