@@ -20,20 +20,38 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Banco
 
         public void DoWork()
         {
-            _mensagem.Salvar("teste");
-            while (GetMessages)
+            var t = new Thread(x =>
             {
-                var caminhoFila = ConfigurationManager.AppSettings["MessageQueuePath"];
-
-                using (var queue = new MessageQueue(caminhoFila))
+                while (GetMessages)
                 {
-                    if (queue.CanRead)
-                        using (var ts = new TransactionScope(TransactionScopeOption.Required))
-                            SaveMessages(queue.GetAllMessages());
-                }
+                    var caminhoFila = ConfigurationManager.AppSettings["MessageQueuePath"];
 
-                Thread.Sleep(2000);
-            }
+                    using (var queue = new MessageQueue(caminhoFila))
+                    {
+                        if (queue.CanRead)
+                            using (var ts = new TransactionScope(TransactionScopeOption.Required))
+                            {
+                                System.Type[] tipos = new System.Type[2];
+                                Object o = new object();
+                                tipos[0] = typeof(string);
+                                tipos[1] = o.GetType();
+                                queue.Formatter = new XmlMessageFormatter(tipos);
+                                var mensagem = queue.Receive()?.Body?.ToString();
+
+                                if (!string.IsNullOrWhiteSpace(mensagem))
+                                {
+                                    _mensagem.Salvar(mensagem);
+                                }
+
+                                ts.Complete();
+                            }
+                    }
+
+                    Thread.Sleep(2000);
+                }
+            });
+
+            t.Start();
         }
 
         public void Stop()
@@ -41,10 +59,10 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Banco
             GetMessages = false;
         }
 
-        private void SaveMessages(Message[] listMsg)
-        {
-            foreach (var msg in listMsg)
-                _mensagem.Salvar(msg.Body.ToString());
-        }
+        //private void SaveMessages(Message[] listMsg)
+        //{
+        //    foreach (var msg in listMsg)
+        //        _mensagem.Salvar(msg.Body.ToString());
+        //}
     }
 }

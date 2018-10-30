@@ -11,7 +11,7 @@ namespace Pos.Arquitetura.TrabalhoFinal.Data
             using (SqlConnection oConn = new SqlConnection(connection))
             {
                 oConn.Open();
-                using (SqlCommand cmd = new SqlCommand($"INSERT INTO Table VALUES ('{msg}')", oConn))                
+                using (SqlCommand cmd = new SqlCommand($"INSERT INTO Mensagens VALUES ('{msg}')", oConn))                
                     cmd.ExecuteNonQuery();                
             }                       
         }
