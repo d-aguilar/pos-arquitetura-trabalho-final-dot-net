@@ -11,10 +11,11 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Banco
     public class Service : IService
     {
         bool GetMessages = true;
-        Mensagem _mensagem = new Mensagem();
+        private readonly MensagemData _mensagem;
 
         public Service()
         {
+            _mensagem = new MensagemData();
         }
 
         public void DoWork()

@@ -11,15 +11,19 @@ using System.Transactions;
 
 namespace Pos.Arquitetura.TrabalhoFinal.WCF.Rest
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+
     public class EnvioDeMensagemService : IEnvioDeMensagemService
     {
+
+        private readonly string _ipMessageQueue = ConfigurationManager.AppSettings["IPMessageQueue"];
+        private readonly string _nomeDaFila = ConfigurationManager.AppSettings["NomeDaFila"];
         public void EnviarMensagemParaFila(string mensagem)
         {
-            var caminhoFila = ConfigurationManager.AppSettings["MessageQueuePath"];
+            CriaFilaSeNaoExiste();
 
-            using (var queue = new MessageQueue(caminhoFila))
+            var caminhoDaFila = RetornaCaminhoDaFila();
+
+            using (var queue = new MessageQueue(caminhoDaFila))
             {
                 var msg = new System.Messaging.Message { Body = mensagem };
 
@@ -30,5 +34,19 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Rest
                 }
             }
         }
+
+        private void CriaFilaSeNaoExiste()
+        {
+            var nomeDaFila = "." + _nomeDaFila;
+            if (!MessageQueue.Exists(nomeDaFila))
+            {
+                MessageQueue.Create(nomeDaFila, true);
+            }
+        }
+        private string RetornaCaminhoDaFila()
+        {
+            return _ipMessageQueue + _nomeDaFila;
+        }
+
     }
 }

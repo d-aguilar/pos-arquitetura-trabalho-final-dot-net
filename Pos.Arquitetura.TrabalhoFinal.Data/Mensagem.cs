@@ -3,13 +3,14 @@ using System.Data.SqlClient;
 
 namespace Pos.Arquitetura.TrabalhoFinal.Data
 {
-    public class Mensagem
+    public class MensagemData
     {
         public void Salvar(string msg)
         {
-            string connection = ConfigurationManager.AppSettings["connectionString"];
+            string connection = ConfigurationManager.ConnectionStrings["TrabalhoFinalDB"].ConnectionString;
             using (SqlConnection oConn = new SqlConnection(connection))
             {
+                oConn.Open();
                 using (SqlCommand cmd = new SqlCommand($"INSERT INTO Table VALUES ('{msg}')", oConn))                
                     cmd.ExecuteNonQuery();                
             }                       

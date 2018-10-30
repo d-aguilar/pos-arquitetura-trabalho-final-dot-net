@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel;
 using System.ServiceModel.MsmqIntegration;
 
-namespace Pos.Arquitetura.TrabalhoFinal.Shared
+namespace Pos.Arquitetura.TrabalhoFinal.Shared.Contratos
 {
     [ServiceContract]
     public interface IMensageriaService

@@ -1,4 +1,4 @@
-﻿using Pos.Arquitetura.TrabalhoFinal.Shared;
+﻿using Pos.Arquitetura.TrabalhoFinal.Shared.Contratos;
 using System;
 using System.ServiceModel;
 using System.ServiceModel.MsmqIntegration;

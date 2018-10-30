@@ -80,5 +80,8 @@
       <Name>Pos.Arquitetura.TrabalhoFinal.Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contratos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
