@@ -9,12 +9,8 @@ namespace Pos.Arquitetura.TrabalhoFinal.MSMQ
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         static void Main()
         {
-            //SELF-HOST (repare que não estou utilizando o IIS)
             using (var host = new ServiceHost(typeof(MensageriaService)))
             {
                 host.Faulted += Faulted;
@@ -22,7 +18,6 @@ namespace Pos.Arquitetura.TrabalhoFinal.MSMQ
 
                 Console.WriteLine("Serviço iniciado ...");
 
-                //Se apertar qualquer tecla vai sair do console
                 Console.ReadLine();
 
                 if (host != null)

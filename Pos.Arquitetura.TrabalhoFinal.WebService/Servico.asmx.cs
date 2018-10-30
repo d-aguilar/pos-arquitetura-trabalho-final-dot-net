@@ -18,9 +18,9 @@ namespace Pos.Arquitetura.TrabalhoFinal.WebService
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void EnviarMensagem(string mensagem)
         {
-            return "Hello World";
+            //Chamar WCF Rest
         }
     }
 }
