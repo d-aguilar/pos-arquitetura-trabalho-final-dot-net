@@ -49,8 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contratos\IMensageriaService.cs" />
-    <Compile Include="Contratos\Info.cs" />
     <Compile Include="MensageriaService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pos.Arquitetura.TrabalhoFinal.Shared\Pos.Arquitetura.TrabalhoFinal.Shared.csproj">
+      <Project>{bdf0a9a3-a626-414e-b80a-7399fc5b7be7}</Project>
+      <Name>Pos.Arquitetura.TrabalhoFinal.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

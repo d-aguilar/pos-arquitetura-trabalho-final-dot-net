@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.Arquitetura.TrabalhoFinal.WebApi", "Pos.Arquitetura.TrabalhoFinal.WebApi\Pos.Arquitetura.TrabalhoFinal.WebApi.csproj", "{EAC982B7-D20B-43C1-8872-EF1CB24FF072}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.Arquitetura.TrabalhoFinal.WCF.Banco", "Pos.Arquitetura.TrabalhoFinal.WCF.Banco\Pos.Arquitetura.TrabalhoFinal.WCF.Banco.csproj", "{5207692E-B32F-4453-8B82-EF1C87D40C01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.Arquitetura.TrabalhoFinal.MSMQ", "Pos.Arquitetura.TrabalhoFinal.MSMQ\Pos.Arquitetura.TrabalhoFinal.MSMQ.csproj", "{5CA35749-B35C-405F-A09E-61F21382F156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.Arquitetura.TrabalhoFinal.Shared", "Pos.Arquitetura.TrabalhoFinal.Shared\Pos.Arquitetura.TrabalhoFinal.Shared.csproj", "{BDF0A9A3-A626-414E-B80A-7399FC5B7BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.Arquitetura.TrabalhoFinal.Data", "Pos.Arquitetura.TrabalhoFinal.Data\Pos.Arquitetura.TrabalhoFinal.Data.csproj", "{27D0373D-BA29-40F7-936F-66B7A2EA99EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{5CA35749-B35C-405F-A09E-61F21382F156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CA35749-B35C-405F-A09E-61F21382F156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CA35749-B35C-405F-A09E-61F21382F156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF0A9A3-A626-414E-B80A-7399FC5B7BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF0A9A3-A626-414E-B80A-7399FC5B7BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF0A9A3-A626-414E-B80A-7399FC5B7BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF0A9A3-A626-414E-B80A-7399FC5B7BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D0373D-BA29-40F7-936F-66B7A2EA99EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D0373D-BA29-40F7-936F-66B7A2EA99EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D0373D-BA29-40F7-936F-66B7A2EA99EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D0373D-BA29-40F7-936F-66B7A2EA99EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

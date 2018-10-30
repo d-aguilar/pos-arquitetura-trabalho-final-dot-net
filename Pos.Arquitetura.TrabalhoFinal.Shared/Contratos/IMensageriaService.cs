@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.ServiceModel.MsmqIntegration;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Pos.Arquitetura.TrabalhoFinal.MSMQ.Contratos
+namespace Pos.Arquitetura.TrabalhoFinal.Shared
 {
     [ServiceContract]
     public interface IMensageriaService

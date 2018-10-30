@@ -12,9 +12,7 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Rest
     [ServiceContract]
     public interface IEnvioDeMensagemService
     {
-
         [OperationContract]
         void EnviarMensagemParaFila(string mensagem);
-
     }
 }

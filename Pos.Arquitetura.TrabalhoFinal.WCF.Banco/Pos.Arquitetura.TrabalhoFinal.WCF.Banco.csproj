@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,6 +43,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -65,17 +68,22 @@
     <Content Include="App_Data\BancoDeDados_log.ldf">
       <DependentUpon>BancoDeDados.mdf</DependentUpon>
     </Content>
-    <Content Include="Service1.svc" />
+    <Content Include="Service.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="IService.cs" />
+    <Compile Include="Service.svc.cs">
+      <DependentUpon>Service.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Pos.Arquitetura.TrabalhoFinal.Data\Pos.Arquitetura.TrabalhoFinal.Data.csproj">
+      <Project>{27D0373D-BA29-40F7-936F-66B7A2EA99EB}</Project>
+      <Name>Pos.Arquitetura.TrabalhoFinal.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -95,7 +103,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58968</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

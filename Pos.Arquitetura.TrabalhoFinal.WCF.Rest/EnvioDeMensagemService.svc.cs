@@ -29,8 +29,6 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Rest
                     ts.Complete();
                 }
             }
-
         }
-
     }
 }
