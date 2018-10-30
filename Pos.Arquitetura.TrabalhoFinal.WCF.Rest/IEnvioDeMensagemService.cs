@@ -14,6 +14,7 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Rest
     {
 
         [OperationContract]
+        [WebInvoke(Method ="POST", UriTemplate = "/EnvioDeMensagem")]
         void EnviarMensagemParaFila(string mensagem);
 
     }

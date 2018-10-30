@@ -14,7 +14,7 @@ namespace Pos.Arquitetura.TrabalhoFinal.WebApi.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
-            //Chamar WCF Rest
+            //Chamar WCF Rest usando HTTPClient ou RestSharp
         }
     }
 }
