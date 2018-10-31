@@ -16,5 +16,8 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Banco
 
         [OperationContract]
         void Stop();
+
+        [OperationContract]
+        IEnumerable<string> ListarMensagens();
     }
 }

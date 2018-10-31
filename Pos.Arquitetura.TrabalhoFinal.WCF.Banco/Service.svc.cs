@@ -59,10 +59,13 @@ namespace Pos.Arquitetura.TrabalhoFinal.WCF.Banco
             GetMessages = false;
         }
 
-        //private void SaveMessages(Message[] listMsg)
-        //{
-        //    foreach (var msg in listMsg)
-        //        _mensagem.Salvar(msg.Body.ToString());
-        //}
+        public IEnumerable<string> ListarMensagens()
+        {
+            using (var ts = new TransactionScope(TransactionScopeOption.Required))
+            {
+                return _mensagem.ListarMensagens();
+            }
+        }
+
     }
 }
